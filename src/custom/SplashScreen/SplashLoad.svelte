@@ -2,10 +2,7 @@
     import { fade } from 'svelte/transition'
     import { createEventDispatcher } from 'svelte';
     
-    const dispatch = createEventDispatcher();
-
-    let loader
-    
+    const dispatch = createEventDispatcher();    
 </script>
 
 <div class="flex min-h-screen justify-center items-center" >

@@ -1,23 +1,17 @@
 <script>
-import SplashLoad from "./custom/SplashScreen/SplashLoad.svelte";
-import Main from "./routes/Main.svelte";
+  import Router from 'svelte-spa-router';
+  import {push, pop, replace} from 'svelte-spa-router'
+  import { routes } from './routes'
 
-  let loader = 2
+  replace('/')
   
-  const handleOutroed = () => {
-    
-  }
   
 </script>
 
 <main class="flex flex-col items-center animate-gradient-x bg-gradient-to-br from-gradient-one to-gradient-two w-full">
   <div class="blur-xl animate-spin"></div>
   <div class="flex flex-col min-h-screen bg-white shadow-lg max-w-lg w-full">
-    {#if loader == 0}
-       <SplashLoad on:outroed={handleOutroed}></SplashLoad>
-    {:else if loader == 2}
-       <Main></Main>
-    {/if}
+    <Router {routes}/>
   </div>
 </main>
 
@@ -30,12 +24,8 @@ import Main from "./routes/Main.svelte";
 <!--   
   const splashFunction = () => {
       setTimeout(() => {
-        loader++
+        replace('/')
     }, 2000);
-  }
-
-  const handleOutroed = () => {
-    loader++
   }
   splashFunction()
 -->
