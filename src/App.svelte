@@ -3,8 +3,14 @@
   import {push, pop, replace} from 'svelte-spa-router'
   import { routes } from './routes'
 
-  replace('/')
+  replace('/splashload')
   
+  const splashFunction = () => {
+      setTimeout(() => {
+        replace('/')
+    }, 2000);
+  }
+  splashFunction()
   
 </script>
 
@@ -22,10 +28,5 @@
 </style>
 
 <!--   
-  const splashFunction = () => {
-      setTimeout(() => {
-        replace('/')
-    }, 2000);
-  }
-  splashFunction()
+ 
 -->
